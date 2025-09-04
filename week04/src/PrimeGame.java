@@ -6,12 +6,14 @@ public class PrimeGame {
         int counter = 0;
         int number = sc.nextInt();
 
-        for(int i=1; i<=number; i=i+1){
+        for(int i=2; i<number; i=i+1){
             if(number % i == 0){
                 counter++; //counter = counter + 1
+                break;
             }
+            System.out.print(i + " ");
         }
-        if(counter==2){
+        if(counter==0){
             System.out.println(number + " is a prime number~");
         }else{
             System.out.println(number + " is NOT prime number!");
