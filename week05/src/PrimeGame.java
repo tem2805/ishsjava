@@ -19,12 +19,20 @@ public class PrimeGame {
 
         int[] numbers = {11, 977, 1, 2, 53, 1200}; //배열
 
-        for(int i=0; i<6; i++){
-            if(isPrime(numbers[i])){
-                System.out.println(numbers[i] + " is a prime number~");
+        for(int number : numbers){ //range based for
+            if(isPrime(number)){
+                System.out.println(number + " is a prime number~");
             }else{
-                System.out.println(numbers[i] + " is NOT prime number!");
+                System.out.println(number + " is NOT prime number!");
             }
         }
+
+//        for(int i=0; i<6; i++){
+//            if(isPrime(numbers[i])){
+//                System.out.println(numbers[i] + " is a prime number~");
+//            }else{
+//                System.out.println(numbers[i] + " is NOT prime number!");
+//            }
+//        }
     }
 }
