@@ -1,6 +1,6 @@
 public class Squirtle extends Pokemon{
-    public Squirtle(int hp, int attackPower){
-        super("꼬부기",hp,attackPower);
+    public Squirtle(int hp, int attackPower, NoFly noFly){
+        super("꼬부기",hp,attackPower, noFly);
         System.out.println("꼬북꼬북");
     }
 
