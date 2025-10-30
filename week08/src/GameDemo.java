@@ -6,28 +6,30 @@ public class GameDemo {
 //        int randomNumber = (int)(Math.random() * 3); // 0 ~ 2
 //        System.out.println(randomNumber);
 
-        Pokemon playerPokemon = null;
+        //Pokemon playerPokemon = null;
+        Pokemon playerPokemon = new Pikachu(100, 27, new NoFly());
         Scanner scanner = new Scanner(System.in);
 
-        try{
-            while (true){
+        while (true){
+            try {
                 System.out.print("플레이어 포켓몬스터 선택\n1) 피카츄  2) 꼬부기  3) 리자몽 : ");
                 int number = scanner.nextInt();  // string
-                if (number-1 == 0){
+                if (number - 1 == 0) {
                     playerPokemon = new Pikachu(100, 27, new NoFly());
                     break;
-                }else if(number-1 == 1){
+                } else if (number - 1 == 1) {
                     playerPokemon = new Squirtle(120, 21, new NoFly());
                     break;
-                }else if (number-1 == 2){
+                } else if (number - 1 == 2) {
                     playerPokemon = new Charizard(200, 40, new Wings());
                     break;
-                }else
+                } else
                     System.out.println("메뉴에서 골라주세요");
+            } catch (InputMismatchException err) {
+                System.out.println("숫자로 입력하세요. 메뉴에서 고르세요.");
+                //System.out.println(err.getMessage());
+                scanner.nextLine(); //버퍼에 남아있는 값(문자열) 제거
             }
-        }catch (InputMismatchException err){
-            System.out.println("숫자로 입력하세요. 메뉴에서 고르세요.");
-            System.out.println(err.getMessage());
         }
 
         int randomNumber = (int)(Math.random() * 3);
