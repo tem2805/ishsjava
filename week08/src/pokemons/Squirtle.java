@@ -1,3 +1,7 @@
+package pokemons;
+
+import fly.NoFly;
+
 public class Squirtle extends Pokemon{
     public Squirtle(int hp, int attackPower, NoFly noFly){
         super("꼬부기",hp,attackPower, noFly);
