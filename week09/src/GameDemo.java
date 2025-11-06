@@ -30,7 +30,7 @@ public class GameDemo {
         Pokemon playerPokemon = new Pikachu(100, 27, new NoFly(), pickachuskills);
         Scanner scanner = new Scanner(System.in);
 
-        while (true){
+        while (true) {
             try {
                 System.out.print("플레이어 포켓몬스터 선택\n1) 피카츄  2) 꼬부기  3) 리자몽 : ");
                 int number = scanner.nextInt();  // string
@@ -52,60 +52,34 @@ public class GameDemo {
             }
         }
 
-        int randomNumber = (int)(Math.random() * 3);
+        int randomNumber = (int) (Math.random() * 3);
         Pokemon enemyPokemon = null;
         System.out.println("야생의 포켓몬스터가 나타났다!");
-        if(randomNumber == 0)
+        if (randomNumber == 0)
             enemyPokemon = new Pikachu(100, 27, new NoFly(), pickachuskills);
-        else if(randomNumber == 1)
+        else if (randomNumber == 1)
             enemyPokemon = new Squirtle(120, 21, new NoFly(), squirtleskills);
-        else if(randomNumber == 2)
+        else if (randomNumber == 2)
             enemyPokemon = new Charizard(200, 40, new Wings(), charizardskills);
 
 
         System.out.println("배틀 시작!");
         System.out.println("=============");
 
-        for(int i = 0; i < playerPokemon.skills.length; i++){
-            System.out.println((i+1) + ". " + playerPokemon.skills[i].getName() + " (" + playerPokemon.skills[i].getDamage() + ")");
+        while (true) {
+            for (int i = 0; i < playerPokemon.skills.length; i++) {
+                System.out.println((i + 1) + ". " + playerPokemon.skills[i].getName() + " (" + playerPokemon.skills[i].getDamage() + ")");
+            }
+
+            System.out.print("Select skill : ");
+            int skillNumber = scanner.nextInt() - 1;
+
+            playerPokemon.attack(enemyPokemon, skillNumber);
+
+            if (enemyPokemon.isFainted() || playerPokemon.isFainted()) {
+                break;
+            }
+
         }
-
-        System.out.print("Select skill : ");
-        int skillNumber = scanner.nextInt() - 1;
-
-        enemyPokemon.setHp(enemyPokemon.getHp() - playerPokemon.skills[skillNumber].getDamage());
-        System.out.println(enemyPokemon.getName() + "의 체력이 " + enemyPokemon.getHp() + "이 남았습니다.");
-
-//        int turn = 1;
-//        while(!p1.isFainted() && !c1.isFainted()){
-//            System.out.println("턴 " + turn + "시작.");
-//            p1.attack(c1);
-//            if(c1.isFainted()){
-//                System.out.println(c1.getName() + "이(가) 기절했습니다! " + p1.getName() + " 승리!");
-//                break;
-//            }
-//            c1.attack(p1);
-//            if(p1.isFainted()){
-//                System.out.println(p1.getName() + "이(가) 기절했습니다! " + c1.getName() + " 승리!");
-//                break;
-//            }
-//            System.out.println("==============");
-//            turn++;
-//        }
-//        System.out.println("배틀 종료");
     }
-
-
-
-//        pokemons.Pikachu myPikachu = new pokemons.Pikachu(100, 27);
-//        pokemons.Pikachu yourPikachu = new pokemons.Pikachu(100, 28);
-//        pokemons.Squirtle enemySquirtle = new pokemons.Squirtle(120, 21);
-//        System.out.println("Game start~");
-//        myPikachu.attack(enemySquirtle);
-//        enemySquirtle.attack(myPikachu);
-//        for (int i=0;i<5;i++)
-//            enemySquirtle.attack(myPikachu);
-//        System.out.println(myPikachu);
-//        System.out.println(enemySquirtle);
-//    }
 }
