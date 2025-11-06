@@ -76,6 +76,8 @@ public class GameDemo {
 
             playerPokemon.attack(enemyPokemon, skillNumber);
 
+            enemyPokemon.attack(playerPokemon, (int)(Math.random()*3));
+
             if (enemyPokemon.isFainted() || playerPokemon.isFainted()) {
                 break;
             }
