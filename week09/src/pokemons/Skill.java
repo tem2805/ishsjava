@@ -4,7 +4,7 @@ public class Skill {
     String name;
     int damage;
 
-    public Skill(int damage, String name) {
+    public Skill(String name, int damage) {
         this.damage = damage;
         this.name = name;
     }
