@@ -12,20 +12,20 @@ public class GameDemo {
 
         Skill[] pickachuskills = {
                 new Skill("Nuzzle", 20),
-                new Skill("ThunderShock", 40),
-                new Skill("QuickAttack", 40),
+                new Skill("Thunder Shock", 40),
+                new Skill("Quick Attack", 40),
         };
 
         Skill[] squirtleskills = {
                 new Skill("Tackle", 40),
-                new Skill("WaterGun", 40),
-                new Skill("RapidSpin", 50),
+                new Skill("Water Gun", 40),
+                new Skill("Rapid Spin", 50),
         };
 
         Skill[] charizardskills = {
                 new Skill("Scratch", 40),
-                new Skill("DragonBreath", 60),
-                new Skill("FlareBlitz", 120),
+                new Skill("Dragon Breath", 60),
+                new Skill("Flare Blitz", 120),
         };
 
         //pokemons.Pokemon playerPokemon = null;
@@ -65,31 +65,14 @@ public class GameDemo {
             enemyPokemon = new Charizard(200, 40, new Wings(), charizardskills);
 
 
-        //pokemons.Pokemon playerPokemon = new pokemons.Pikachu(100, 27, new fly.NoFly());
-        //pokemons.Pokemon playerPokemon = new pokemons.Charizard(200, 40, new fly.Wings());
-        //pokemons.Pokemon playerPokemon = new pokemons.Squirtle(120, 21, new fly.NoFly());
+        System.out.println("배틀 시작!");
+        System.out.println("=============");
 
-//        fly.Jetpack jetpack = new fly.Jetpack();
-//
-//        pokemons.Pikachu p1 = new pokemons.Pikachu(100, 27, new fly.NoFly());
-//        //p1.setFlyingTool(new fly.NoFly());
-//        p1.performFlyable();
-//        p1.setFlyingTool(jetpack);  //제트팩 추진기 획득
-//        p1.performFlyable();
-//
-////        pokemons.Pikachu p2 = new pokemons.Pikachu(100, 28);
-//        pokemons.Charizard c1 = new pokemons.Charizard(200, 40, new fly.Wings());
-//        //c1.setFlyingTool(new fly.Wings());
-//        c1.performFlyable();
-////        pokemons.Squirtle s1 = new pokemons.Squirtle(120, 21);
-//
-//        System.out.println("배틀 시작!");
-//        System.out.println(p1);
-//        System.out.println(c1);
-//        System.out.println("=============");
-//
+        for(int i = 0; i < playerPokemon.skills.length; i++){
+            System.out.println((i+1) + ". " + playerPokemon.skills[i].getName() + " (" + playerPokemon.skills[i].getDamage() + ")");
+        }
+
 //        int turn = 1;
-//
 //        while(!p1.isFainted() && !c1.isFainted()){
 //            System.out.println("턴 " + turn + "시작.");
 //            p1.attack(c1);
