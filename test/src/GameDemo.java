@@ -148,9 +148,19 @@ public class GameDemo {
             System.out.println(playerPokemon.getName()+" HP:"+playerPokemon.getHp()+" | "+enemyPokemon.getName()+" HP:"+enemyPokemon.getHp());
             System.out.println("행동을 선택하세요:\n1. 공격\n2. 도망");
             try{
+                int choice = scanner.nextInt();
+                if(choice==1){
+                    System.out.println(playerPokemon.skills);
+                    System.out.println("시용할 스킬을 선택하세요:");
+                    for (int i = 0; i < playerPokemon.skills.size(); i++) {
+                        System.out.println((i) + ". " + playerPokemon.skills.get(i).getName() + " (데미지: " + playerPokemon.skills.get(i).getDamage() + ")");
+                    }
+                }
+
 
             }catch(InputMismatchException){
                 System.out.println("잘못된 선택입니다.");
+                continue;
             }
 
 
