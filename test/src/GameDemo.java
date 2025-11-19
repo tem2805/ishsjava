@@ -75,6 +75,21 @@ public class GameDemo {
         Pokemon enemyPokemon = null;
         // 여기서 부터 코딩 시작
         System.out.println("야생의 포켓몬스터가 나타났다!");
+
+        ArrayList<Skill> squirtleSkills = new ArrayList<>();
+        squirtleSkills.add(new Skill("물대포", 58));
+        squirtleSkills.add(new Skill("하이드로펌프", 93));
+        squirtleSkills.add(new Skill("아쿠아테일", 71));
+
+        ArrayList<Skill> charizardSkills = new ArrayList<>();
+        charizardSkills.add(new Skill("전기충격", 50));
+        charizardSkills.add(new Skill("십만볼트", 95));
+        charizardSkills.add(new Skill("전광석화", 72));
+
+        ArrayList<Skill> pikachuSkills = new ArrayList<>();
+        pikachuSkills.add(new Skill("화염방사", 52));
+        pikachuSkills.add(new Skill("불꽃세례", 97));
+        pikachuSkills.add(new Skill("용의분노", 74));
         if (randomNumber == 0)
             enemyPokemon = new Pikachu(100, 27, new NoFly(), pikachuSkills);
         else if (randomNumber == 1)
@@ -104,11 +119,21 @@ public class GameDemo {
         // 여기서 부터 코딩 시작
         for(int i=1; i<=3;i++){
             System.out.print("도망치는 중");
-            for(int i=1; i<=3; i++){
-                System.out.print(".");
-            System.out.println();
+            try{
+                for(int i=1; i<=3; i++){
+                    System.out.print(".");
+                    System.out.println();
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            } catch (InterruptedException) {
+                throw new e.printStackTrace();
             }
         }
+        System.out.println();
 
 
 
@@ -120,6 +145,13 @@ public class GameDemo {
 
         while (true) {
             // 여기서 부터 코딩 시작
+            System.out.println(playerPokemon.getName()+" HP:"+playerPokemon.getHp()+" | "+enemyPokemon.getName()+" HP:"+enemyPokemon.getHp());
+            System.out.println("행동을 선택하세요:\n1. 공격\n2. 도망");
+            try{
+
+            }catch(InputMismatchException){
+                System.out.println("잘못된 선택입니다.");
+            }
 
 
             // 여기 까지 코드 작성
