@@ -2,6 +2,7 @@
 // 학번 : 1209
 // 성명 : 김현겸
 
+import fly.Flyable;
 import fly.NoFly;
 import fly.Wings;
 import java.util.ArrayList;
@@ -30,10 +31,24 @@ public class GameDemo {
         // 여기서 부터 코딩 시작
         while(true){
             try{
-                System.out.println("1)피카츄 2) 꼬부기 3)리자몽");
+                System.out.println("당신의 포켓몬을 선택하세요:\n1. 피카츄 \n2. ");
                 int number = scanner.nextInt()-1;
+                if (number == 0) {
+                    playerPokemon = new Pikachu(100, 27, new NoFly(), pikachuSkills);
+                    break;
+                } else if (number == 1) {
+                    playerPokemon = new Squirtle(120, 21, new NoFly(), squirtleSkills);
+                    break;
+                } else if (number == 2) {
+                    playerPokemon = new Charizard(200, 40, new Wings(), charizardSkills);
+                    break;
+                } else
+                    System.out.println("메뉴에서 골라주세요");
+            } catch (InputMismatchException err) {
+                System.out.println("숫자로 입력하세요. 메뉴에서 고르세요.");
+                }
             }
-        }
+
 
 
         // 여기 까지 코드 작성
@@ -44,6 +59,13 @@ public class GameDemo {
         int randomNumber = (int)(Math.random() * 3);
         Pokemon enemyPokemon = null;
         // 여기서 부터 코딩 시작
+        System.out.println("야생의 포켓몬스터가 나타났다!");
+        if (randomNumber == 0)
+            enemyPokemon = new Pikachu(100, 27, new NoFly(), pikachuSkills);
+        else if (randomNumber == 1)
+            enemyPokemon = new Squirtle(120, 21, new NoFly(), squirtleSkills);
+        else if (randomNumber == 2)
+            enemyPokemon = new Charizard(200, 40, new Wings(), charizardSkills);
 
 
         // 여기 까지 코드 작성
@@ -55,6 +77,8 @@ public class GameDemo {
         System.out.println("도망 이펙트 발동!");
         System.out.println("====================");
         // 여기서 부터 코딩 시작
+        pokemon.performFlyable();
+
 
 
         // 여기 까지 코드 작성
