@@ -31,8 +31,23 @@ public class GameDemo {
         // 여기서 부터 코딩 시작
         while(true){
             try{
-                System.out.println("당신의 포켓몬을 선택하세요:\n1. 피카츄 \n2. ");
+                System.out.println("당신의 포켓몬을 선택하세요:\n1. 피카츄 \n2. 꼬부기 \n3. 리자몽");
                 int number = scanner.nextInt()-1;
+                ArrayList<Skill> squirtleSkills = new ArrayList<>();
+                squirtleSkills.add(new Skill("물대포", 58));
+                squirtleSkills.add(new Skill("하이드로펌프", 93));
+                squirtleSkills.add(new Skill("아쿠아테일", 71));
+
+                ArrayList<Skill> charizardSkills = new ArrayList<>();
+                charizardSkills.add(new Skill("전기충격", 50));
+                charizardSkills.add(new Skill("십만볼트", 95));
+                charizardSkills.add(new Skill("전광석화", 72));
+
+                ArrayList<Skill> pikachuSkills = new ArrayList<>();
+                pikachuSkills.add(new Skill("화염방사", 52));
+                pikachuSkills.add(new Skill("불꽃세례", 97));
+                pikachuSkills.add(new Skill("용의분노", 74));
+
                 if (number == 0) {
                     playerPokemon = new Pikachu(100, 27, new NoFly(), pikachuSkills);
                     break;
@@ -43,9 +58,9 @@ public class GameDemo {
                     playerPokemon = new Charizard(200, 40, new Wings(), charizardSkills);
                     break;
                 } else
-                    System.out.println("메뉴에서 골라주세요");
+                    System.out.println("메뉴에서 골라주세요 (1-3)");
             } catch (InputMismatchException err) {
-                System.out.println("숫자로 입력하세요. 메뉴에서 고르세요.");
+                System.out.println("숫자로 입력하세요.");
                 }
             }
 
@@ -78,6 +93,7 @@ public class GameDemo {
         System.out.println("====================");
         // 여기서 부터 코딩 시작
         pokemon.performFlyable();
+        animateEscape();
 
 
 
@@ -86,6 +102,14 @@ public class GameDemo {
 
     private static void animateEscape() {
         // 여기서 부터 코딩 시작
+        for(int i=1; i<=3;i++){
+            System.out.print("도망치는 중");
+            for(int i=1; i<=3; i++){
+                System.out.print(".");
+            System.out.println();
+            }
+        }
+
 
 
         // 여기 까지 코드 작성
