@@ -22,6 +22,12 @@ public class GameDemo {
         System.out.println("========================================\n");
         // 여기서 부터 코딩 시작
         selectPlayerPokemon();
+        while(true){
+            battleCount = battleCount+1;
+            System.out.println(battleCount);
+            createRandomEnemyPokemon();
+            startBattle();
+        }
 
     }
 
