@@ -26,7 +26,14 @@ public class GameDemo {
 
     private static Pokemon selectPlayerPokemon() {
         Pokemon playerPokemon = null;
+
         // 여기서 부터 코딩 시작
+        while(true){
+            try{
+                System.out.println("1)피카츄 2) 꼬부기 3)리자몽");
+                int number = scanner.nextInt()-1;
+            }
+        }
 
 
         // 여기 까지 코드 작성
